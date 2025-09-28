@@ -6,7 +6,7 @@
 
 **Yielder** is an autonomous yield aggregator on **Ethereum Sepolia** that automatically finds and stakes your assets in the most profitable liquidity pools across multiple DEXs, ensuring you always get the best returns with minimal effort.
 
-**Website:** [`https://yielder-protocol.vercel.app/`](https://yielder-protocol.vercel.app/)
+**Website:** [`https://yielder_aykansal.ar.io/`](https://yielder_aykansal.ar.io/)
 
 ---
 
