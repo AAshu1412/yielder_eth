@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import { ArweaveWalletKit } from "@arweave-wallet-kit/react";
 import WanderStrategy from "@arweave-wallet-kit/wander-strategy";
 import { useMemo } from "react";
+import Landing from "./pages/Landing";
 
 const queryClient = new QueryClient();
 
@@ -141,6 +142,7 @@ const App = () => (
           <Sonner />
           <HashRouter>
             <Routes>
+              <Route path="/" element={<Landing />} />
               <Route
                 path="/dashboard"
                 element={
