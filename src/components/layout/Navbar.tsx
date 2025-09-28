@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { toast } from "@/hooks/use-toast";
 import { ConnectButton, useProfileModal } from "@arweave-wallet-kit/react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export function Navbar() {
   const { isAuthenticated, wallet } = useAuth();
@@ -21,7 +22,6 @@ export function Navbar() {
   const tabs = [
     { to: "/pools", label: "Pools", public: true },
     { to: "/dashboard", label: "User Dashboard", public: false },
-    { to: "/history", label: "Txn History", public: true },
   ];
 
   const handleDisconnect = () => {
@@ -73,28 +73,6 @@ export function Navbar() {
               {({ isActive }) => (
                 <span className="inline-flex flex-col items-center">
                   <span>{tabs[1].label}</span>
-                  <span
-                    className={`mt-1 h-0.5 w-8 rounded-full transition-all ${
-                      isActive
-                        ? "bg-[hsl(var(--primary-700))]"
-                        : "bg-transparent"
-                    }`}
-                  />
-                </span>
-              )}
-            </NavLink>
-          )}
-          {isAuthenticated && (
-            <NavLink
-              key={tabs[2].to}
-              to={tabs[2].to}
-              className={({ isActive }) =>
-                `relative text-sm font-medium text-foreground/80 hover:text-foreground transition-colors ${isActive ? "text-foreground" : ""}`
-              }
-            >
-              {({ isActive }) => (
-                <span className="inline-flex flex-col items-center">
-                  <span>{tabs[2].label}</span>
                   <span
                     className={`mt-1 h-0.5 w-8 rounded-full transition-all ${
                       isActive
