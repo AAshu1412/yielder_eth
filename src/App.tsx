@@ -14,6 +14,8 @@ import WanderStrategy from "@arweave-wallet-kit/wander-strategy";
 import { useMemo } from "react";
 import Landing from "./pages/Landing";
 import { LiquidityPage } from "./pages/Liquidity";
+import Pools from "./pages/Pools";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -157,6 +159,22 @@ const App = () => (
                 element={
                   <AppShell>
                     <LiquidityPage />
+                  </AppShell>
+                }
+              />
+              <Route
+                path="/pools"
+                element={
+                  <AppShell>
+                    <Pools />
+                  </AppShell>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <AppShell>
+                    <NotFound />
                   </AppShell>
                 }
               />
