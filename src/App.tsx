@@ -8,11 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route, Navigate, HashRouter } from "react-router";
 import { ThemeProvider, useTheme } from "@/contexts/ThemeContext";
 import { AppShell } from "@/components/layout/AppShell";
-import NotFound from "./pages/NotFound";
-import Pools from "./pages/Pools";
 import Dashboard from "./pages/Dashboard";
-import { LiquidityPage } from "./pages/Liquidity";
-import Landing from "./pages/Landing";
 import { ArweaveWalletKit } from "@arweave-wallet-kit/react";
 import WanderStrategy from "@arweave-wallet-kit/wander-strategy";
 import { useMemo } from "react";
@@ -145,36 +141,11 @@ const App = () => (
           <Sonner />
           <HashRouter>
             <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route
-                path="/pools"
-                element={
-                  <AppShell>
-                    <Pools />
-                  </AppShell>
-                }
-              />
-              <Route
-                path="/liquidity"
-                element={
-                  <AppShell>
-                    <LiquidityPage />
-                  </AppShell>
-                }
-              />
               <Route
                 path="/dashboard"
                 element={
                   <AppShell>
                     <Dashboard />
-                  </AppShell>
-                }
-              />
-              <Route
-                path="*"
-                element={
-                  <AppShell>
-                    <NotFound />
                   </AppShell>
                 }
               />
