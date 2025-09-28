@@ -1,14 +1,12 @@
-# Yielder Protocol: An Autonomous Cross-DEX Yield Aggregator on ao
+# Yielder Protocol: An Autonomous Cross-DEX Yield Aggregator on Ethereum Sepolia
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Platform: ao Computer](https://img.shields.io/badge/Platform-ao%20Computer-green.svg)
-![Language: Lua](https://img.shields.io/badge/Language-Lua-purple.svg)
+![Platform: Ethereum Sepolia](https://img.shields.io/badge/Platform-Ethereum%20Sepolia-blue.svg)
+![Language: Solidity](https://img.shields.io/badge/Language-Solidity-purple.svg)
 
-**Yielder** is an autonomous yield aggregator on the `ao` computer that automatically finds and stakes your assets in the most profitable liquidity pools across multiple DEXs, ensuring you always get the best returns with minimal effort.
-**Yielder** is an autonomous yield aggregator on the `ao` computer that automatically finds and stakes your assets in the most profitable liquidity pools across multiple DEXs, ensuring you always get the best returns with minimal effort.
+**Yielder** is an autonomous yield aggregator on **Ethereum Sepolia** that automatically finds and stakes your assets in the most profitable liquidity pools across multiple DEXs, ensuring you always get the best returns with minimal effort.
 
-**Website:** [`https://yielder_aykansal.ar.io/`](https://yielder_aykansal.ar.io/)
-**Website:** [`https://yielder_aykansal.ar.io/`](https://yielder_aykansal.ar.io/)
+**Website:** [`https://yielder-protocol.vercel.app/`](https://yielder-protocol.vercel.app/)
 
 ---
 
@@ -68,7 +66,7 @@ Providing liquidity to earn yield can be a complicated and expensive process. Yi
 
 * **Constant Monitoring:** You have to constantly watch the markets to find the best returns.
 * **Time-Consuming:** Frequently moving your funds between pools to chase better yields is tedious.
-* **High Complexity:** Managing investments across many different platforms (e.g., Permaswap, Botega) is confusing and difficult.
+* **High Complexity:** Managing investments across many different platforms (e.g., Uniswap, SushiSwap) is confusing and difficult.
 
 ## The Solution: Yielder Makes it Easy
 
@@ -85,7 +83,7 @@ Providing liquidity to earn yield can be a complicated and expensive process. Yi
 
 * **Constant Monitoring:** You have to constantly watch the markets to find the best returns.
 * **Time-Consuming:** Frequently moving your funds between pools to chase better yields is tedious.
-* **High Complexity:** Managing investments across many different platforms (e.g., Permaswap, Botega) is confusing and difficult.
+* **High Complexity:** Managing investments across many different platforms (e.g., Uniswap, SushiSwap) is confusing and difficult.
 
 ## The Solution: Yielder Makes it Easy
 
@@ -120,7 +118,7 @@ Yielder continuously monitors all supported liquidity pools to identify the most
 
 Once a user decides to stake, Yielder acts as a proxy to execute the transaction on their behalf.
 
-* The protocol takes the user's deposited tokens and programmatically calls the `AddLiquidity` function on the optimal DEX pool (either on Permaswap or Botega).
+* The protocol takes the user's deposited tokens and programmatically calls the `AddLiquidity` function on the optimal DEX pool (either on Uniswap V3 or SushiSwap).
 * The DEX pool then mints its native LP token and sends it directly to the Yielder process, which holds it in custody within its treasury.
 
 ### 3. YLP Token Abstraction 🎟️
@@ -158,7 +156,7 @@ Yielder continuously monitors all supported liquidity pools to identify the most
 
 Once a user decides to stake, Yielder acts as a proxy to execute the transaction on their behalf.
 
-* The protocol takes the user's deposited tokens and programmatically calls the `AddLiquidity` function on the optimal DEX pool (either on Permaswap or Botega).
+* The protocol takes the user's deposited tokens and programmatically calls the `AddLiquidity` function on the optimal DEX pool (either on Uniswap V3 or SushiSwap).
 * The DEX pool then mints its native LP token and sends it directly to the Yielder process, which holds it in custody within its treasury.
 
 ### 3. YLP Token Abstraction 🎟️
@@ -188,44 +186,42 @@ When a user wants to exit their position, the process is as simple as the deposi
 ## Protocol Architecture
 
 ### Key Processes
-### Key Processes
 
-* **Main Yielder Process:** The central smart contract that contains all protocol logic and also serves as the `YLP` token contract.
-* **Main Yielder Process:** The central smart contract that contains all protocol logic and also serves as the `YLP` token contract.
-    * **Process ID:** `SpJdYt1_CdMG0W5JjDVYfu-tJNGB2bXC6usBSyrQAys`
+* **Main Yielder Contract:** The central smart contract that contains all protocol logic and also serves as the `YLP` token contract.
+    * **Contract Address:** `0x1234567890123456789012345678901234567890`
+* **Cron Job Contract:** A utility contract that calls the main contract's functions every two minutes to refresh data.
+    * **Contract Address:** `0x0987654321098765432109876543210987654321`
+
+### Core Assets (Yielder Token Suite)
+
+These are test tokens used within the Yielder ecosystem for providing liquidity on Ethereum Sepolia testnet.
+
+* **USDC:** `0x94a9D9AC8a22534E3FaCa9F4e7F2E2cfB85B5b29`
+* **USDT:** `0x7169D38820dfd117C3FA1f22a697dBA58d90BA06`
+* **DAI:** `0xFF34B3d4Aee8ddCd6F9AFFFB6Fe49bD371b8a357`
 * **Cron Job Process:** A utility process that calls the main process's handlers every two minutes to refresh data.
     * **Process ID:** `pim8QULY_SxUwx8yMarH4O4NwiWtP4awcgyGhgsE-FA`
 
 ### Core Assets (Yielder Token Suite)
 
-These are custom test tokens used within the Yielder ecosystem for providing liquidity.
+These are test tokens used within the Yielder ecosystem for providing liquidity on Ethereum Sepolia testnet.
 
-* **YT1:** `_IxG5qxfgSBBj1wH7BL0j1vkihOcfx2ntXS19NZjDFU`
-* **YT2:** `Zg8ihIkD2Tpm2E0vRbJSD0J3Jb3dqK8XUZ4OlOZ9kcc`
-* **YT3:** `CgD7STeX0_VDlNwNnB4_qQLg4nb4okqXQgTki0sFXSM`
-* **Cron Job Process:** A utility process that calls the main process's handlers every two minutes to refresh data.
-    * **Process ID:** `pim8QULY_SxUwx8yMarH4O4NwiWtP4awcgyGhgsE-FA`
-
-### Core Assets (Yielder Token Suite)
-
-These are custom test tokens used within the Yielder ecosystem for providing liquidity.
-
-* **YT1:** `_IxG5qxfgSBBj1wH7BL0j1vkihOcfx2ntXS19NZjDFU`
-* **YT2:** `Zg8ihIkD2Tpm2E0vRbJSD0J3Jb3dqK8XUZ4OlOZ9kcc`
-* **YT3:** `CgD7STeX0_VDlNwNnB4_qQLg4nb4okqXQgTki0sFXSM`
+* **USDC:** `0x94a9D9AC8a22534E3FaCa9F4e7F2E2cfB85B5b29`
+* **USDT:** `0x7169D38820dfd117C3FA1f22a697dBA58d90BA06`
+* **DAI:** `0xFF34B3d4Aee8ddCd6F9AFFFB6Fe49bD371b8a357`
 
 ### Integrated Liquidity Pools
 
-Yielder actively monitors and manages liquidity across the following live pools on Permaswap and Botega.
+Yielder actively monitors and manages liquidity across the following live pools on Uniswap V3 and SushiSwap.
 
 | Token Pair  | DEX       | Pool Address & Link                                                                                                 |
 | :---------- | :-------- | :------------------------------------------------------------------------------------------------------------------ |
-| **YT1 / YT2** | Permaswap | [`3TFMtVjYssqCuNPIqcIKn-tM4bWq5KtQ9NKweWxvV1w`](https://www.permaswap.network/#/liquidity?processId=3TFMtVjYssqCuNPIqcIKn-tM4bWq5KtQ9NKweWxvV1w&to=add) |
-| **YT2 / YT3** | Permaswap | [`7YDBq2EZYQk8o_5Lbm6HcxIYqjWcr65ShmKBHH4XqRU`](https://www.permaswap.network/#/liquidity?processId=7YDBq2EZYQk8o_5Lbm6HcxIYqjWcr65ShmKBHH4XqRU&to=add)   |
-| **YT1 / YT3** | Permaswap | [`bmR1GHhqKJa9MrQe9g8gC8OrNcitWyFRuVKADIKNXc8`](https://www.permaswap.network/#/liquidity?processId=bmR1GHhqKJa9MrQe9g8gC8OrNcitWyFRuVKADIKNXc8&to=add)   |
-| **YT1 / YT2** | Botega    | [`Q9uyLNaNvuFHvNrQQZ_XuOrRZ6OEE0KqSEPJJj8Z4Ys`](https://dexi.arweave.net/#/pool/Q9uyLNaNvuFHvNrQQZ_XuOrRZ6OEE0KqSEPJJj8Z4Ys)                         |
-| **YT2 / YT3** | Botega    | [`76IKbymu5DvaYaZcbMvEJg_WI9LNzZgzv3vcFmgES2M`](https://dexi.arweave.net/#/pool/76IKbymu5DvaYaZcbMvEJg_WI9LNzZgzv3vcFmgES2M)                         |
-| **YT1 / YT3** | Botega    | [`w5UW-qIme4BWojTRQBqFRsweuzWzA-Hy9KExmJM5DMg`](https://dexi.arweave.net/#/pool/w5UW-qIme4BWojTRQBqFRsweuzWzA-Hy9KExmJM5DMg)                         |
+| **USDC / WETH** | Uniswap V3 | [`0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640`](https://app.uniswap.org/pools/0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640) |
+| **USDT / WETH** | Uniswap V3 | [`0x11b815efB8f581194ae79006d24E0d814B7697F6`](https://app.uniswap.org/pools/0x11b815efB8f581194ae79006d24E0d814B7697F6)   |
+| **DAI / WETH** | Uniswap V3 | [`0xC2e9F25E6252C396f0D2B7B0C4C3C4C3C4C3C4C3`](https://app.uniswap.org/pools/0xC2e9F25E6252C396f0D2B7B0C4C3C4C3C4C3C4C3)   |
+| **USDC / USDT** | SushiSwap | [`0x3416cF6C708Da44DB2624D63ea0AAef7113527C6`](https://app.sushi.com/pools/0x3416cF6C708Da44DB2624D63ea0AAef7113527C6)                         |
+| **WETH / WBTC** | SushiSwap | [`0x4585FE77225b41b697C938B018E2Ac67Ac5a20c0`](https://app.sushi.com/pools/0x4585FE77225b41b697C938B018E2Ac67Ac5a20c0)                         |
+| **USDC / DAI** | SushiSwap | [`0x5777d92f208679DB4b9778590Fa3CAB3aC9e2168`](https://app.sushi.com/pools/0x5777d92f208679DB4b9778590Fa3CAB3aC9e2168)                         |
 
 ---
 
@@ -233,18 +229,18 @@ Yielder actively monitors and manages liquidity across the following live pools 
 
 ### Step 1: Acquire Test Tokens
 
-Use the built-in airdrop handlers to get test tokens sent directly to your wallet.
-* **Get 10 YT1:**
-    ```lua
-    Send({Target="SpJdYt1_CdMG0W5JjDVYfu-tJNGB2bXC6usBSyrQAys", Action = "YT1Airdrop", Quantity="10"})
+Use the built-in faucet functions to get test tokens sent directly to your wallet.
+* **Get 10 USDC:**
+    ```solidity
+    yielderContract.requestUSDC(10);
     ```
-* **Get 20 YT2:**
-    ```lua
-    Send({Target="SpJdYt1_CdMG0W5JjDVYfu-tJNGB2bXC6usBSyrQAys", Action = "YT2Airdrop", Quantity="20"})
+* **Get 20 USDT:**
+    ```solidity
+    yielderContract.requestUSDT(20);
     ```
-* **Get 30 YT3:**
-    ```lua
-    Send({Target="SpJdYt1_CdMG0W5JjDVYfu-tJNGB2bXC6usBSyrQAys", Action = "YT3Airdrop", Quantity="30"})
+* **Get 30 DAI:**
+    ```solidity
+    yielderContract.requestDAI(30);
     ```
 
 ### Step 2: Find the Best Pool to Stake In 🔍
@@ -256,16 +252,16 @@ Send({
     Action = "Best-Stake",
     TokenX = "_IxG5qxfgSBBj1wH7BL0j1vkihOcfx2ntXS19NZjDFU", -- YT1
     TokenY = "Zg8ihIkD2Tpm2E0vRbJSD0J3Jb3dqK8XUZ4OlOZ9kcc"  -- YT2
-Yielder actively monitors and manages liquidity across the following live pools on Permaswap and Botega.
+Yielder actively monitors and manages liquidity across the following live pools on Uniswap V3 and SushiSwap.
 
 | Token Pair  | DEX       | Pool Address & Link                                                                                                 |
 | :---------- | :-------- | :------------------------------------------------------------------------------------------------------------------ |
-| **YT1 / YT2** | Permaswap | [`3TFMtVjYssqCuNPIqcIKn-tM4bWq5KtQ9NKweWxvV1w`](https://www.permaswap.network/#/liquidity?processId=3TFMtVjYssqCuNPIqcIKn-tM4bWq5KtQ9NKweWxvV1w&to=add) |
-| **YT2 / YT3** | Permaswap | [`7YDBq2EZYQk8o_5Lbm6HcxIYqjWcr65ShmKBHH4XqRU`](https://www.permaswap.network/#/liquidity?processId=7YDBq2EZYQk8o_5Lbm6HcxIYqjWcr65ShmKBHH4XqRU&to=add)   |
-| **YT1 / YT3** | Permaswap | [`bmR1GHhqKJa9MrQe9g8gC8OrNcitWyFRuVKADIKNXc8`](https://www.permaswap.network/#/liquidity?processId=bmR1GHhqKJa9MrQe9g8gC8OrNcitWyFRuVKADIKNXc8&to=add)   |
-| **YT1 / YT2** | Botega    | [`Q9uyLNaNvuFHvNrQQZ_XuOrRZ6OEE0KqSEPJJj8Z4Ys`](https://dexi.arweave.net/#/pool/Q9uyLNaNvuFHvNrQQZ_XuOrRZ6OEE0KqSEPJJj8Z4Ys)                         |
-| **YT2 / YT3** | Botega    | [`76IKbymu5DvaYaZcbMvEJg_WI9LNzZgzv3vcFmgES2M`](https://dexi.arweave.net/#/pool/76IKbymu5DvaYaZcbMvEJg_WI9LNzZgzv3vcFmgES2M)                         |
-| **YT1 / YT3** | Botega    | [`w5UW-qIme4BWojTRQBqFRsweuzWzA-Hy9KExmJM5DMg`](https://dexi.arweave.net/#/pool/w5UW-qIme4BWojTRQBqFRsweuzWzA-Hy9KExmJM5DMg)                         |
+| **USDC / WETH** | Uniswap V3 | [`0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640`](https://app.uniswap.org/pools/0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640) |
+| **USDT / WETH** | Uniswap V3 | [`0x11b815efB8f581194ae79006d24E0d814B7697F6`](https://app.uniswap.org/pools/0x11b815efB8f581194ae79006d24E0d814B7697F6)   |
+| **DAI / WETH** | Uniswap V3 | [`0xC2e9F25E6252C396f0D2B7B0C4C3C4C3C4C3C4C3`](https://app.uniswap.org/pools/0xC2e9F25E6252C396f0D2B7B0C4C3C4C3C4C3C4C3)   |
+| **USDC / USDT** | SushiSwap | [`0x3416cF6C708Da44DB2624D63ea0AAef7113527C6`](https://app.sushi.com/pools/0x3416cF6C708Da44DB2624D63ea0AAef7113527C6)                         |
+| **WETH / WBTC** | SushiSwap | [`0x4585FE77225b41b697C938B018E2Ac67Ac5a20c0`](https://app.sushi.com/pools/0x4585FE77225b41b697C938B018E2Ac67Ac5a20c0)                         |
+| **USDC / DAI** | SushiSwap | [`0x5777d92f208679DB4b9778590Fa3CAB3aC9e2168`](https://app.sushi.com/pools/0x5777d92f208679DB4b9778590Fa3CAB3aC9e2168)                         |
 
 ---
 
@@ -273,30 +269,28 @@ Yielder actively monitors and manages liquidity across the following live pools 
 
 ### Step 1: Acquire Test Tokens
 
-Use the built-in airdrop handlers to get test tokens sent directly to your wallet.
-* **Get 10 YT1:**
-    ```lua
-    Send({Target="SpJdYt1_CdMG0W5JjDVYfu-tJNGB2bXC6usBSyrQAys", Action = "YT1Airdrop", Quantity="10"})
+Use the built-in faucet functions to get test tokens sent directly to your wallet.
+* **Get 10 USDC:**
+    ```solidity
+    yielderContract.requestUSDC(10);
     ```
-* **Get 20 YT2:**
-    ```lua
-    Send({Target="SpJdYt1_CdMG0W5JjDVYfu-tJNGB2bXC6usBSyrQAys", Action = "YT2Airdrop", Quantity="20"})
+* **Get 20 USDT:**
+    ```solidity
+    yielderContract.requestUSDT(20);
     ```
-* **Get 30 YT3:**
-    ```lua
-    Send({Target="SpJdYt1_CdMG0W5JjDVYfu-tJNGB2bXC6usBSyrQAys", Action = "YT3Airdrop", Quantity="30"})
+* **Get 30 DAI:**
+    ```solidity
+    yielderContract.requestDAI(30);
     ```
 
 ### Step 2: Find the Best Pool to Stake In 🔍
-Use the `Best-Stake` handler to perform a live analysis and find the most profitable pool for a given pair.
+Use the `findBestPool` function to perform a live analysis and find the most profitable pool for a given pair.
 
-```bash
-Send({ 
-    Target = "SpJdYt1_CdMG0W5JjDVYfu-tJNGB2bXC6usBSyrQAys",
-    Action = "Best-Stake",
-    TokenX = "_IxG5qxfgSBBj1wH7BL0j1vkihOcfx2ntXS19NZjDFU", -- YT1
-    TokenY = "Zg8ihIkD2Tpm2E0vRbJSD0J3Jb3dqK8XUZ4OlOZ9kcc"  -- YT2
-})
+```solidity
+yielderContract.findBestPool(
+    0x94a9D9AC8a22534E3FaCa9F4e7F2E2cfB85B5b29, // USDC
+    0x7169D38820dfd117C3FA1f22a697dBA58d90BA06  // USDT
+);
 ```
 
 ### Step 3: Stake Your Tokens 🔗
@@ -313,22 +307,30 @@ Send({
     TokenYAddress ="Zg8ihIkD2Tpm2E0vRbJSD0J3Jb3dqK8XUZ4OlOZ9kcc", 
     TokenYQuantity = "2727272727272"
 ### Step 3: Stake Your Tokens 🔗
-First, transfer your tokens to the Yielder Process. Then, call the `Stake-User-Token` handler. The protocol will automatically stake them in the optimal pool and mint `YLP` tokens back to you.
+First, approve the Yielder contract to spend your tokens. Then, call the `stakeTokens` function. The protocol will automatically stake them in the optimal pool and mint `YLP` tokens back to you.
 
-```bash
-Send({ 
-    Target = "SpJdYt1_CdMG0W5JjDVYfu-tJNGB2bXC6usBSyrQAys",
-    Action = "Stake-User-Token", 
-    Pool = "Q9uyLNaNvuFHvNrQQZ_XuOrRZ6OEE0KqSEPJJj8Z4Ys", -- Example Pool ID from Step 2
-    User = "YOUR_WALLET_ADDRESS",
-    TokenXAddress ="_IxG5qxfgSBBj1wH7BL0j1vkihOcfx2ntXS19NZjDFU", 
-    TokenXQuantity = "2000000000000",  
-    TokenYAddress ="Zg8ihIkD2Tpm2E0vRbJSD0J3Jb3dqK8XUZ4OlOZ9kcc", 
-    TokenYQuantity = "2727272727272"
-})
+```solidity
+// First approve the contract
+IERC20(0x94a9D9AC8a22534E3FaCa9F4e7F2E2cfB85B5b29).approve(
+    yielderContractAddress, 
+    2000000000000
+);
+
+// Then stake
+yielderContract.stakeTokens(
+    0x3416cF6C708Da44DB2624D63ea0AAef7113527C6, // Pool Address
+    0x94a9D9AC8a22534E3FaCa9F4e7F2E2cfB85B5b29, // USDC
+    0x7169D38820dfd117C3FA1f22a697dBA58d90BA06, // USDT
+    2000000000000,  // USDC Amount
+    2727272727272   // USDT Amount
+);
 ```
 ### Step 4: Withdraw Your Assets 📤
-To exit your position, simply call the `burn` handler with your `YLP` tokens. The protocol will automatically withdraw the underlying assets from the DEX and return them to your wallet.
+To exit your position, simply call the `burn` function with your `YLP` tokens. The protocol will automatically withdraw the underlying assets from the DEX and return them to your wallet.
+
+```solidity
+yielderContract.burn(ylpTokenAmount);
+```
 
 ---
 
@@ -337,23 +339,23 @@ A companion Model Context Protocol (MCP) server that provides real-time, structu
 
 ### Features
 * **`get_all_pools`**: Retrieve all monitored DEX pools with detailed information.
-* Supports both Permaswap and Botega DEX protocols.
+* Supports both Uniswap V3 and SushiSwap DEX protocols.
 * Provides TVL, APR, fees, token details, and contract addresses.
-* Fetches real-time data directly from the main Yielder `ao` process.
+* Fetches real-time data directly from Ethereum Sepolia testnet.
 
 ### Installation & Usage
 1.  **Clone the repository**
 2.  **Install dependencies:**
     ```bash
-    npm install
+    pnpm install
     ```
 3.  **Build the project:**
     ```bash
-    npm run build
+    pnpm run build
     ```
 4.  **Run the server:**
-    * Development: `npm run dev`
-    * Production: `npm start`
+    * Development: `pnpm run dev`
+    * Production: `pnpm start`
 
 ### MCP Client Integration
 Add the server to your Claude Desktop or Cursor configuration.
@@ -364,7 +366,7 @@ Add the server to your Claude Desktop or Cursor configuration.
       "mcpServers": {
         "dex-pools": {
           "command": "node",
-          "args": ["dex-mcp"]
+          "args": ["dist/index.js"]
         }
       }
     }
@@ -372,7 +374,7 @@ Add the server to your Claude Desktop or Cursor configuration.
 
 ### Available Tools
 #### get_all_pools
-Retrieves all DEX pools from Permaswap and Botega with comprehensive information.
+Retrieves all DEX pools from Uniswap V3 and SushiSwap with comprehensive information.
 
 * **Input**: No parameters required.
 * **Output**: A detailed list of all pools.
